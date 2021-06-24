@@ -1,5 +1,6 @@
 import { Request, Response } from "express"
 import { CreateUserService } from "../services/CreateUsersService";
+import "express-async-errors"
 
 
 
@@ -13,6 +14,7 @@ class CreateUserController {
     const user = await createUserService.execute({ name, email, admin });
 
     return response.json(user);
+
   }
 }
 
